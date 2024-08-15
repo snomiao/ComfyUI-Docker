@@ -1,9 +1,10 @@
+#!bun
 services:
   comfyui:
-    image: snomiao/comfyui
+    image: 
     build: .
-    volumes:
-      - ./comfy/ComfyUI:/root/comfy/ComfyUI
+    # volumes:
+    #   - C:\Users\snomi\Documents\comfy\ComfyUI:/root/comfy/ComfyUI
     ports:
       - 8188:8188
     deploy:
@@ -12,3 +13,5 @@ services:
           devices:
             - driver: nvidia
               capabilities: [gpu]
+
+docker run --name comfyui snomiao/comfyui
