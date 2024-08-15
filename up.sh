@@ -14,4 +14,4 @@ services:
             - driver: nvidia
               capabilities: [gpu]
 
-docker run --name comfyui snomiao/comfyui
+# docker run --name comfyui snomiao/comfyui
