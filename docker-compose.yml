@@ -3,12 +3,7 @@ services:
     image: snomiao/comfyui
     build: .
     volumes:
-      - ./comfy/ComfyUI:/root/comfy/ComfyUI
+      - ./ComfyUI:/ComfyUI
     ports:
       - 8188:8188
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              capabilities: [gpu]
+    command: "--cpu --front-end-version Comfy-Org/ComfyUI_frontend@latest --listen 0.0.0.0"
