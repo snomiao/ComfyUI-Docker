@@ -1,9 +1,9 @@
 services:
   comfyui:
-    image: snomiao/comfyui
+    image: snomiao/comfyui:latest
     build: .
     volumes:
-      - ./ComfyUI:/ComfyUI
+      - ../ComfyUI:/ComfyUI
     ports:
       - 8188:8188
-    command: "--cpu --front-end-version Comfy-Org/ComfyUI_frontend@latest --listen 0.0.0.0"
+    command: "--listen 0.0.0.0 --cpu --front-end-version Comfy-Org/ComfyUI_frontend@latest --"
