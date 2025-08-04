@@ -1,9 +1,10 @@
 services:
   comfyui:
-    image: snomiao/comfyui:latest
+    image: snomiao/comfyui:cpu
     build: .
     volumes:
-      - ../ComfyUI:/ComfyUI
+      - ./ComfyUI:/ComfyUI
     ports:
       - 8188:8188
-    command: "--listen 0.0.0.0 --cpu --front-end-version Comfy-Org/ComfyUI_frontend@latest --"
+# docker run --name comfyui --gpus all -p 8188:8188 snomiao/comfyui:nvidia
+# /code/snomiao/ComfyUI-Docker/tree/main/ComfyUI
