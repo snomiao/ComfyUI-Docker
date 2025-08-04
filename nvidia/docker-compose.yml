@@ -6,7 +6,6 @@ services:
       - ../ComfyUI:/ComfyUI
     ports:
       - 8188:8188
-    command: "--cpu --front-end-version Comfy-Org/ComfyUI_frontend@latest --listen 0.0.0.0"
     deploy:
       resources:
         reservations:
