@@ -14,3 +14,5 @@ docker compose up
 
 docker compose exec comfyui nvidia-smi
 docker compose --all-resources up
+
+docker run -p 8188:8188 --gpus=all snomiao/comfyui:nvidia
