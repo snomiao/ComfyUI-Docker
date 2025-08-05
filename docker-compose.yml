@@ -4,7 +4,11 @@ services:
     build: .
     volumes:
       - ./ComfyUI:/ComfyUI
+      - site-packages:/opt/conda/lib/python3.10/site-packages
     ports:
       - 8188:8188
 # docker run --name comfyui --gpus all -p 8188:8188 snomiao/comfyui:nvidia
 # /code/snomiao/ComfyUI-Docker/tree/main/ComfyUI
+
+volumes:
+  site-packages:

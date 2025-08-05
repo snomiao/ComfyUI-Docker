@@ -1,11 +1,14 @@
 #!/bin/bash
 
+# activate
+uv venv
+.venv/bin/activate
+
+# echo .venv/bin/activate >> /root/.bashrc
+
 # update
 git pull
-pip install -r requirements.txt
-
-# install requirements for custom nodes
-# cd custom_nodes
+uv pip install -r requirements.txt
 
 # launch
 python main.py $*
