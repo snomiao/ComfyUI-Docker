@@ -1,14 +1,16 @@
 #!/bin/bash
 
-# activate
+# activate venv
 uv venv
 .venv/bin/activate
 
-# echo .venv/bin/activate >> /root/.bashrc
+# check if .bashrc already has the source command
+grep -q ".venv/bin/activate" /root/.bashrc || \
+    echo "source /ComfyUI/.venv/bin/activate" >> /root/.bashrc
 
 # update
 git pull
-uv pip install -r requirements.txt
+pip install -r requirements.txt
 
 # launch
 python main.py $*
