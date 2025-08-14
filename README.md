@@ -1,18 +1,44 @@
 # ComfyUI-Docker
 
-## Setup
+Run ComfyUI in your docker
 
-```
-bun setup.sh
-```
+## Get Started
 
-## Launch (CPU)
+Here are few examples:
+```sh
+# cpu:
+docker run -p 8188:8188 snomiao/comfyui:cpu
 
-docker compose up
-
-## Launch (GPU)
-
-docker compose exec comfyui nvidia-smi
-docker compose --all-resources up
-
+# gpu:
 docker run -p 8188:8188 --gpus=all snomiao/comfyui:nvidia
+
+# Mount your ComfyUI volumes
+docker run -p 8188:8188 -v ./ComfyUI:/ComfyUI --gpus=all snomiao/comfyui:nvidia
+```
+
+## Run by Compose
+
+### Launch (CPU)
+
+```sh
+docker compose up
+```
+
+### Launch (GPU)
+
+```sh
+cd nvidia
+docker compose --all-resources up
+```
+
+## Maintaining
+
+```sh
+# check gpu status
+
+docker compose run comfyui nvidia-smi 
+
+install new custom nodes
+
+docker compose exec comfyui comfy node install comfy-videohelpersuite
+```
