@@ -38,7 +38,7 @@ docker compose --all-resources up
 
 docker compose run comfyui nvidia-smi 
 
-install new custom nodes
+# install new custom nodes
 
 docker compose exec comfyui comfy node install comfy-videohelpersuite
 ```

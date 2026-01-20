@@ -3,7 +3,8 @@ services:
     image: snomiao/comfyui:cpu
     build: .
     volumes:
-      - ./ComfyUI:/ComfyUI
+      # - ./ComfyUI/custom_nodes:/ComfyUI/custom_nodes
+      # - ./ComfyUI/workflows:/ComfyUI/workflows
       - site-packages:/opt/conda/lib/python3.10/site-packages
     develop:
       watch:
