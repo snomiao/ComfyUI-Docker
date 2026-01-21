@@ -1,10 +1,10 @@
 #!/bin/bash
 
+# if ./pyproject.toml exists, it means the repo is already cloned
+[ -f ./pyproject.toml ] || bash ./init.sh
 
-# update
+# Update ComfyUI to latest main branch
 git pull
-
-# install requirements using pip (system packages are already available)
 pip install -r requirements.txt
 
 # install custom node requirements
